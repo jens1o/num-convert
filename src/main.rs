@@ -2,7 +2,9 @@ use std::error::Error;
 use std::io::{self, Write};
 
 fn main() -> Result<(), Box<Error>> {
-    println!("Welcome. Enter any number in any format you've been given, use 'q' to exit.");
+    println!(
+        "Welcome. Enter any number in any format you've been given, use 'q' or 'exit' to exit."
+    );
 
     loop {
         print!("\n> ");
@@ -60,7 +62,10 @@ fn main() -> Result<(), Box<Error>> {
                 );
             }
             Err(ref e) => {
-                eprintln!("Error while parsing number: {}! Make sure the file format accepts all characters used in your input.", e);
+                eprintln!(
+                    "Error while parsing number: {}! Detected base: {}",
+                    e, radix
+                );
             }
         }
     }
