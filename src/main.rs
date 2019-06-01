@@ -1,7 +1,7 @@
 use std::error::Error;
 use std::io::{self, Write};
 
-fn main() -> Result<(), Box<Error>> {
+fn main() -> Result<(), Box<dyn Error>> {
     println!(
         "Welcome. Enter any number in any format you've been given, use 'q' or 'exit' to exit."
     );
